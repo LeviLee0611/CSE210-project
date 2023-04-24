@@ -1,9 +1,18 @@
 using System;
 
-class Program
-{
-    static void Main(string[] args)
+namespace game
+{    
+    class Program
     {
-        Console.WriteLine("Hello Sandbox World!!!");
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello Sandbox World!!!");
+            Console.WriteLine("This is in C#.");
+
+            Console.WriteLine("What is your favorite colore? ");
+            String color = Console.ReadLine();
+            Console.Write(color);
+            
+        }
     }
 }
