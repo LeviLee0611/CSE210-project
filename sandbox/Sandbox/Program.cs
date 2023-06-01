@@ -6,84 +6,43 @@ namespace game
     {
         static void Main(string[] args)
         {
-            // object
-            // instance
-            var Layne= new Person("Layne", "Moseley");
-            var David= new Person("David", "Hasselhoff");
+            var personOne = new Person("luke skywalker");
 
-            Layne.Talk();
-            David.Talk();
+            var byuiPerson = new BYUIPerson("obi-wan", "1");
+
+            var studnetOne = new Student("darth vader", "2", "the dark side of the force");
         }
     }
 }
 
-// classification (keyword)
 class Person {
+    protected string _name;
 
-    // attributes
-    // properties
-    string firstName;
-    string lastName;
-
-    //  constructor
-    public Person(string fn, string ln) {
-        firstName = fn;
-        lastName = ln;
-    }
-
-    // behaviors
-    // method
-    public void Breathe() {
-        Console.WriteLine("Breating");
-    }
-
-    public void Walk() {
-        Console.WriteLine("Walking");
-    }
-
-    public void Talk() {
-        Console.WriteLine($"Hi! my name is {firstName} {lastName}");
-    }
-
-    public string FullName() {
-        // return $"{firstName} {lastName}";
-        
-        // string full = String.Concat(firstName, lastName);
-        // return full;
-
-        return firstName + " " + lastName;
-    }
-
-}
-
-
-using System;
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        var savings = new Account();
-        savings.Deposit(500);
-        savings.Deposit(1000);
-
-        savings._transactions.Add(400);
+    public Person(string name){
+        _name = name;
     }
 }
 
-public class Account{
-    private List<int> _transactions = new List<int>();
+class BYUIPerson: Person {
+    protected string _iNumber;
 
-    public void Deposit(int amount){
-        _transactions.Add(amount);
+    public BYUIPerson(string name, string iNumber): base(name) {
+        _iNumber =iNumber;
     }
+}
 
-    public int Balance(){
-        var balance = 0;
-        foreach (var transaction in _transactions){
-            balance += transaction;
-        }
 
-        return balance;
+class Student: BYUIPerson{
+    private string _major;
+
+    public Student (string name, string iNumber, string marjor): base(name, iNumber) {
+        _major = marjor;
+    }
+}
+class Teacher: BYUIPerson {
+    private string _department;
+
+    public Teacher(string name, string iNumber, string department): base(name, iNumber){
+        _department = department;
     }
 }
