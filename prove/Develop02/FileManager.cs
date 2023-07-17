@@ -13,6 +13,7 @@ class FileManager{
 
     public Journal LoadJournal(string filename) {
 
+        string[] lines = System.IO.File.ReadAllLines(filename);
         Journal journal = new Journal ();
 
         foreach (string line in lines) {
