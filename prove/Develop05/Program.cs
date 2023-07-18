@@ -116,3 +116,24 @@ class Program
 }
 }
 }
+
+
+class Shape {
+    public virtual void Draw() {
+        Console.WriteLine("Drawing a shape.");
+    }
+}
+
+class Circle : Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public override void Draw() {
+        Console.WriteLine($"Drawing a circle with radius {radius}.");
+    }
+}
+
+
