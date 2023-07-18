@@ -46,14 +46,14 @@ class Activity{
 }
 
 class Breath: Activity{
-    public int _seconds;
+    private int _seconds;
 
 
-    public Breath(int seconds){
+    private Breath(int seconds){
         _seconds = seconds;
     }
 
-    public void Breathe(){
+    private void Breathe(){
         int duration =_seconds;
         int breatheInDuration = 4;
         int breatheOutDuration = 6;
@@ -82,9 +82,9 @@ class Breath: Activity{
 }
 
 class Reflection: Activity {
-    public int _seconds;
+    private int _seconds;
 
-    public Reflection (int seconds) {
+    private Reflection (int seconds) {
         _seconds = seconds/2;
     }
 
@@ -109,13 +109,13 @@ class Reflection: Activity {
             "How can you keep this experience in mind in the future?"
     };
 
-     public string RandomPrompt(){
+     private string RandomPrompt(){
         Random rnd = new Random();
         int index = rnd.Next(_prompts.Count);
         return _prompts[index];
     }
 
-    public string RandomPrompt2(){
+    private string RandomPrompt2(){
         Random rnd = new Random();
         int index = rnd.Next(_questions.Count);
         return _questions[index];
@@ -131,11 +131,11 @@ class Reflection: Activity {
         }
     }
 
-    public void Begin() {
+    private void Begin() {
         Console.Write("You may begin in: "); Countdown(5);
     }
 
-    public void Ask(){
+    private void Ask(){
         string question1 = RandomPrompt2();
         string question2;
 
@@ -155,9 +155,9 @@ class Reflection: Activity {
 }
 
 class Listing:Activity {
-    public int _seconds;
+    private int _seconds;
 
-    public Listing(int seconds){
+    private Listing(int seconds){
         _seconds = seconds;
     }
 
@@ -169,13 +169,13 @@ class Listing:Activity {
         "Who are some of your personal heroes?"
     };
 
-     public string RandomPrompt(){
+     private string RandomPrompt(){
         Random rnd = new Random();
         int index = rnd.Next(_prompts.Count);
         return _prompts[index];
     }
 
-    public void ListItems(){
+    private void ListItems(){
         int duration =_seconds;
 
         DateTime startTime = DateTime.Now;
@@ -202,7 +202,7 @@ class Listing:Activity {
         }
     }
 
-    public void Begin() {
+    private void Begin() {
         Console.Write("You may begin in: "); Countdown(5);
         Console.WriteLine();
     }
